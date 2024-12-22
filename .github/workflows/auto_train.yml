@@ -10,7 +10,7 @@ on:
 jobs:
   train:
     runs-on: ubuntu-latest
-    environment: api
+    environment: WANDB_API
 
     steps:
     - name: Checkout repository
@@ -19,7 +19,7 @@ jobs:
     - name: Access env
       run : echo "env load"
       env:
-        WANDB_API: ${{ secrets.WANDB_API }}
+        WANDB_API: ${{ secrets.api }}
         
     - name: Set up Python
       uses: actions/setup-python@v3
