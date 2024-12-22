@@ -19,7 +19,7 @@ jobs:
     - name: Access env
       run : echo "env load"
       env:
-        WANDB_API: ${{ secrets.api }}
+        WANDB_API: ${{ secrets.WANDB_API }}
         
     - name: Set up Python
       uses: actions/setup-python@v3
