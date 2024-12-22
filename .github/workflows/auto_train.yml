@@ -6,17 +6,20 @@ on:
       - main
   schedule:
     - cron: '0 0 * * *' 
-env:
-  WANDB_API: ${{ secrets.api }}
 
 jobs:
   train:
     runs-on: ubuntu-latest
+    environment: api
 
     steps:
     - name: Checkout repository
       uses: actions/checkout@v3
-
+      
+    - name: Access env
+      env:
+        WANDB_API: ${{ secrets.WANDB_API }}
+        
     - name: Set up Python
       uses: actions/setup-python@v3
       with:
