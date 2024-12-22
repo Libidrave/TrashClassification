@@ -10,7 +10,7 @@ on:
 jobs:
   train:
     runs-on: ubuntu-latest
-    environment: WANDB_API
+    environment: api
 
     steps:
     - name: Checkout repository
@@ -35,7 +35,7 @@ jobs:
       run: mkdir -p ./models/ 
 
     - name: Log in to W&B
-      run: wandb login $WANDB_API
+      run: wandb login --relogin $WANDB_API
 
     - name: Train the model
       run: python train.py
