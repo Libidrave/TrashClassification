@@ -7,7 +7,7 @@ on:
   schedule:
     - cron: '0 0 * * *' 
 env:
-  WANDB_API_KEY: ${{ secrets.WANDB_API }}
+  WANDB_API: ${{ secrets.api }}
 
 jobs:
   train:
