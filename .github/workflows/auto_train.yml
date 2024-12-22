@@ -35,7 +35,7 @@ jobs:
       run: mkdir -p ./models/ 
 
     - name: Log in to W&B
-      run: wandb login
+      run: wandb login $WANDB_API
 
     - name: Train the model
       run: python train.py
